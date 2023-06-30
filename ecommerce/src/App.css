@@ -3,24 +3,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  position: relative;
-}
-
-.img img {
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-
-}
-
-.title {
-  position: absolute;
-  z-index: 1;
-  color: aliceblue;
-}

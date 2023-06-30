@@ -1,24 +1,21 @@
-import './App.css'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { Header } from './components/Header'
+import { Home } from './components/Home'
+import { Product } from './components/Product'
+import { Page404 } from './components/Page404'
+// import './App.css'
 
 export const App = () => {
   return (
-    <div className="container">
-      <h1>Mio Mio</h1>
-      <button className="btn btn-outline-secondary">Carrito</button>
-      <hr />
-      <input type="text" class="form-control" placeholder="Tu búsqueda..." aria-label="Username" aria-describedby="basic-addon1"></input>
-      <div className="img">
-        <img src="./img/Anteojos/ali-pazani-GwglcplmXDs-unsplash.jpg" alt="" />
-        <div className="title"><p>Lorem, ipsum dolor.</p></div>
-      </div>
-      <div className="img">
-        <img src="./img/Anteojos/ali-pazani-GwglcplmXDs-unsplash.jpg" alt="" />
-        <div className="title"><p>Lorem, ipsum dolor.</p></div>
-      </div>
-      <div className="img">
-        <img src="./img/Anteojos/ali-pazani-GwglcplmXDs-unsplash.jpg" alt="" />
-        <div className="title"><p>Lorem, ipsum dolor.</p></div>
-      </div>
-    </div>
+    <>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/product/:id' element={<Product />} />
+          <Route path='/*' element={<Page404 />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
