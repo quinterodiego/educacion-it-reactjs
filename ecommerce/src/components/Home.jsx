@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import products from './../data/products.json'
+import { Cart } from './Cart';
 
 export const Home = () => {
     console.log(products)
@@ -7,6 +8,8 @@ export const Home = () => {
         <div className='container'>
             <div className="text-center">
                 <h2>PRODUCTOS</h2>
+
+                <Cart />
                 
                 {
                     products.map((product) => (
@@ -17,7 +20,9 @@ export const Home = () => {
                                     <h5 className="card-title">{product.title}</h5>
                                     <p className="card-text">{product.description}</p>
                                     <p className="card-text"><b>${product.price}</b></p>
-                                    <a href="#" className="btn btn-primary">COMPRAR</a>
+                                    <a href="#">
+                                        <img src="" alt="" />
+                                    </a>
                                 </div>
                             </div>
                         </Link>
