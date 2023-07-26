@@ -1,27 +1,27 @@
-import { useState, useContext } from 'react'
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header'
 import { Home } from './components/Home'
 import { Product } from './components/Product'
 import { Page404 } from './components/Page404'
-import { cartContext } from './context/cartContext'
+import { CartContextProvider } from './context/CartContext'
+import { CartPage } from './components/CartPage';
 
 export const App = () => {
 
-  const [products, setproducts] = useState([])
-
-  const { productos } = useContext(cartContext)
-
   return (
-    <>
-      <Header />
-      <BrowserRouter>
+    <CartContextProvider>
+      <div className="container">
+        <Header />
+
+        <hr />
+
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/product/:id' element={<Product />} />
+          <Route path='/cart' element={<CartPage />} />
           <Route path='/*' element={<Page404 />} />
         </Routes>
-      </BrowserRouter>
-    </>
+      </div>
+    </CartContextProvider>
   )
 }
