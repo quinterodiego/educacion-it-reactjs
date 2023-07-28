@@ -11,7 +11,7 @@ export const Home = () => {
         <div className='container position-relative'>
             <div className="text-center">
                 <h2 className='pb-4'>PRODUCTOS</h2>
-                <div className="card-container d-flex flex-wrap gap-3">
+                <div className="card-container d-flex flex-wrap gap-3 justify-content-center">
                     {
                         products.map((product) => (
                             

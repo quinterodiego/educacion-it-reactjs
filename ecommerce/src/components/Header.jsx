@@ -11,7 +11,7 @@ export const Header = () => {
             </Link>
             <ul className="navbar-nav flex-row gap-4">
                 <li className="nav-item">
-                    <Link className="nav-link" aria-current="page" to="/">Home</Link>
+                    <Link className="nav-link" aria-current="page" to="/"><span className="h5">Home</span></Link>
                 </li>
                 <Cart />
             </ul>
